@@ -4,15 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - BTS SIO SLAM</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <!-- Chargement du script EmailJS -->
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Créer un IntersectionObserver pour surveiller les sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Ajouter la classe 'appear' lorsque l'élément est visible
+                    entry.target.classList.add("appear");
+                } else {
+                    // Retirer la classe 'appear' lorsqu'il sort du champ de vision
+                    entry.target.classList.remove("appear");
+                }
+            });
+        });
+    
+        // Cible toutes les sections observer
+        const sections = document.querySelectorAll(".dynamic-section");
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    });
+
+    </script>
     
     <script type="text/javascript">
-        // Initialisation de l'EmailJS avec ta clé publique
+        // Initialisation de l'EmailJS avec clé publique
         (function (){
             emailjs.init("MaSLCAoEgNMHiWWEb"); // Clé publique Emailjs
         })();
@@ -57,7 +80,7 @@
 
 <header>
     <h1>Portfolio - APERT Kylian</h1>
-    <p>BTS SIO SLAM</p>
+    <h2>BTS SIO SLAM</h2>
 </header>
 
 <!-- Barre de navigation -->
@@ -74,13 +97,13 @@
 </nav>
 
 <!-- Section À propos -->
-<section id="a-propos">
+<section id="a-propos" class="dynamic-section">
     <h2>À propos</h2>
     <p>Étudiant en BTS SIO, spécialité SLAM, je combine le développement d'applications avec des compétences en réseau acquises lors de mon alternance chez Sodexo. Je maîtrise des langages comme JavaScript, PHP, HTML et CSS, tout en développant mon expertise en administration réseau. Mon objectif est de continuer à évoluer dans ces deux domaines complémentaires.</p>
 </section>
 
 <!-- BTS SIO -->
-<section id="bts-sio">
+<section id="bts-sio" class="dynamic-section">
     <h2>BTS SIO</h2>
     <p> Le BTS SIO (Services Informatiques aux Organisations) forme des techniciens capables de répondre aux besoins informatiques des entreprises. La formation propose deux options :</p>
     <div style="display: flex; flex-direction: row; gap: 20px;">
@@ -97,15 +120,15 @@
 </section>
 
 <!-- Section Ecole / Entreprise -->
-<section id="ecole-entreprise">
+<section id="ecole-entreprise" class="dynamic-section">
     <h2>Ecole / Entreprise</h2>
    <div style="display: flex; flex-direction: row; gap: 20px;">
     <section style = "width: 750px;">
-        <a href = "https://www.ensitech.eu/"><img src = "logo_ensitech.jpg" alt = "logo ensitech" width = "88px"/></a>
+        <a href = "https://www.ensitech.eu/"><img src = "image/logo_ensitech.jpg" alt = "logo ensitech" width = "88px"/></a>
         <P> L'ENSITECH à Saint-Quentin-en-Yvelines (SQY) est spécialisée dans les formations en informatique. L'école propose des cursus en alternance dans des domaines tels que le développement, les systèmes et réseaux, et la cybersécurité. Grâce à un enseignement axé sur la pratique</P>
         </section>
         <section style = "width: 750px;">
-            <a href = "https://fr.sodexo.com/home.html"><img src = "logo_sodexo.png" alt = "logo Sodexo" width = "200px"/></a>
+            <a href = "https://fr.sodexo.com/home.html"><img src = "image/logo_sodexo.png" alt = "logo Sodexo" width = "200px"/></a>
         <p>Sodexo est une entreprise spécialisée dans les services de qualité de vie. En France, elle propose principalement des services de restauration collective pour les entreprises, écoles, hôpitaux, et établissements publics. Elle offre également des services comme la propreté, la maintenance etc...
             <br/>Je suis actuellement dans l'équipe réseau et téléphonie.
         </p>
@@ -114,17 +137,23 @@
 </section>
 
 <!-- Section Realisation ou Mission -->
-<section id="realisation-mission">
+<section id="realisation-mission" class="dynamic-section">
     <h2>Missions</h2>
     <div style="display: flex; flex-direction: row; gap: 20px;">
     <section>
-        <p>Mission 1</p>
+        <img src="image/nolark.png" alt="logoi Nolark" width="123px"/>
+        <p style="text-align: center;">Nolark</p>
+        <a href="page/nolark.html" class="btn">En savoir plus</a>
     </section>
     <section>
-        <p>Mission 2</p>
+        <img src = "image/orange.png" alt = "logo Orange" width = "123px"/>
+        <p style="text-align: center;">Orange Opérateur<br/> Connect</p>
+        <a href="page/operateurconnect.html" class="btn">En savoir plus</a>
     </section>
     <section>
-        <p>Mission 3</p>
+        <img src="image/script.jpg" alt="logo python" width="200px"/>
+        <p style="text-align: center;">Script création de réseau</p>
+        <a href="page/scriptreseau.html" class="btn">En savoir plus</a>
     </section>
 </div>
 <div style="display: flex; flex-direction: row; gap: 20px;">
@@ -141,23 +170,27 @@
 </section>
 
 <!-- Section Projet -->
-<section id="projet">
+<section id="projet" class="dynamic-section">
     <h2>Projets</h2>
     <div style="display: flex; flex-direction: row; gap: 20px;">
-    <section>
-        <img src = "stockm.jpg.webp" alt = "logo StockM" width = "200px"/>
+    <section style="text-align: center;">
+        <img src = "image/stockm.jpg.webp" alt = "logo StockM" width = "200px"/>
         <p style="text-align: center;">site E-commerce<br/>
         (Client leger)</p>
+        <a href="page/clientleger.html" class="btn">En savoir plus</a>
     </section>
 
-    <section>
-        <p>Client lourd</p>
+    <section style="text-align: center;">
+        <img src = "image/A.png" alt = "logo Gestion de stock" width = "200px"/>
+        <p style="text-align: center;">Application de gestion de stock<br/>
+        (Client lourd)</p>
+        <a href="page/clientlourd.html" class="btn">En savoir plus</a>
     </section>
     </div>
 </section>
 
 <!-- Section Veille Technologique -->
-<section id="veille-technologique">
+<section id="veille-technologique" class="dynamic-section">
     <h2>Veille Technologique</h2>
     <section><p><h4>Qu'est-ce que la veille technologique ?</h4>
         La veille technologique, élément de la veille stratégique, 
@@ -239,25 +272,23 @@
 </section>
 
 <!-- Section contact -->
-<section id="contact">
-
+<section id="contact" class="dynamic-section">
     <h2>Contactez-moi</h2>
     <form id="contact-form" onsubmit="sendEmail(event)">
-        <label for="name">Nom :</label><br/>
-        <input type="text" id="name" name="name" required><br/><br/>
+        <label for="name">Nom :</label>
+        <input type="text" id="name" name="name" required>
 
-        <label for="firstname">Prénom :</label><br/>
-        <input type="text" id="firstname" name="firstname" required><br/><br/>
-        
-        <label for="email">Email :</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <label for="firstname">Prénom :</label>
+        <input type="text" id="firstname" name="firstname" required>
 
-        <label for="message">Message :</label><br>
-        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
 
         <button type="submit">Envoyer</button>
     </form>
-
 </section>
 
 
