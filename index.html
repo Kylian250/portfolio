@@ -6,6 +6,52 @@
     <title>Portfolio - BTS SIO SLAM</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Chargement du script EmailJS -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    
+    <script type="text/javascript">
+        // Initialisation de l'EmailJS avec ta clé publique
+        (function (){
+            emailjs.init("MaSLCAoEgNMHiWWEb"); // Clé publique Emailjs
+        })();
+    
+        function sendEmail(e) {
+            e.preventDefault(); // Empêche le rechargement de la page
+    
+            // Récupération des valeurs du formulaire
+            const name = document.getElementById("name").value;
+            const firstname = document.getElementById("firstname").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+    
+            // Affichage des valeurs récupérées dans la console pour débogage
+            console.log({
+                name: name,
+                firstname: firstname,
+                email: email,
+                message: message
+            });
+    
+            // Envoi des données via EmailJS
+            emailjs.send("service_2vhbn9v", "template_m9rga3j", {
+                name: name,
+                firstname: firstname,
+                email: email,
+                message: message
+            })
+            .then(function(response) {
+                alert("Votre message a bien été envoyé !");
+                document.getElementById("contact-form").reset(); // Réinitialisation du formulaire
+            }, function(error) {
+                alert("Une erreur s'est produite. Veuillez réessayer.");
+                console.log("Erreur:", error);
+            });
+    
+            console.log("Fin de la fonction sendEmail");
+        }
+    </script>
 </head>
 <body>
 
@@ -194,28 +240,28 @@
 
 <!-- Section contact -->
 <section id="contact">
-<<<<<<< HEAD
+
     <h2>Contactez-moi</h2>
-    <form action="send_mail.php" method="post">
+    <form id="contact-form" onsubmit="sendEmail(event)">
         <label for="name">Nom :</label><br/>
         <input type="text" id="name" name="name" required><br/><br/>
 
-        <label for="email">Email :</label><br/>
-        <input type="email" id="email" name="email" required><br/><br/>
+        <label for="firstname">Prénom :</label><br/>
+        <input type="text" id="firstname" name="firstname" required><br/><br/>
         
-        <label for="subject">Sujet :</label><br>
-        <input type="text" id="subject" name="subject" required><br><br>
+        <label for="email">Email :</label><br>
+        <input type="email" id="email" name="email" required><br><br>
 
         <label for="message">Message :</label><br>
         <textarea id="message" name="message" rows="5" required></textarea><br><br>
 
-        <button type="summit">Envoyer</button>
+        <button type="submit">Envoyer</button>
     </form>
-=======
-    <h2>Contact</h2>
-    <p> Formulaire d'envoi de message à moi</p>
->>>>>>> 421e86252ff25cc964083837841899c9ee38979f
+
 </section>
+
+
+
 
 <footer>
     <p>Portfolio de APERT Kylian - BTS SIO SLAM - 2024/2025</p>
