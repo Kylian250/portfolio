@@ -15,7 +15,7 @@ header {
     padding: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-image: url('/image/code2.webp'); /* Remplace 'ton-image.jpg' par le chemin de ton image */
+    background-image: url('../image/code2.webp'); /* Remplace 'ton-image.jpg' par le chemin de ton image */
     background-size: cover;  /* Cette propriété permet de faire en sorte que l'image couvre toute la zone du header */
     background-position: center; /* Centre l'image dans le header */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
@@ -323,7 +323,7 @@ footer {
 
 #realisation-mission img:hover {
     transform: scale(1.1);
-    
+     
     filter: drop-shadow(
         20px 10px 4px rgba(0,0,0,0.3)
     );
