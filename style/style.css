@@ -15,7 +15,7 @@ header {
     padding: 2rem 0;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-image: url('/image/code2.webp'); /* Remplace 'ton-image.jpg' par le chemin de ton image */
+    background-image: url('../image/code2.webp'); /* Remplace 'ton-image.jpg' par le chemin de ton image */
     background-size: cover;  /* Cette propriété permet de faire en sorte que l'image couvre toute la zone du header */
     background-position: center; /* Centre l'image dans le header */
     background-repeat: no-repeat; /* Empêche l'image de se répéter */
@@ -227,9 +227,13 @@ footer {
 }
 
 #bts-sio {
-    padding: 30px;
-    background: linear-gradient(to bottom, #2e2b2b, #3b3a3a);
+    background-color: #2e2b2b;
+    color: white;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 1000px;
     border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #bts-sio div {
@@ -241,6 +245,29 @@ footer {
     line-height: 1.8;
     color: #e0e0e0;
 }
+
+#bts-sio ul li {
+    margin-bottom: 10px;
+}
+
+#bts-sio ul {
+    padding-left: 20px;
+    list-style: circle;
+}
+
+#bts-sio h3 {
+    font-size: 1.5rem;
+    color: #58abff;
+    margin-bottom: 10px;
+}
+
+#bts-sio h2 {
+    font-size: 2rem;
+    color: #58abff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
 
 #ecole-entreprise {
     background: linear-gradient(to right, #3e3e3e, #292929);
@@ -296,7 +323,10 @@ footer {
 
 #realisation-mission img:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+     
+    filter: drop-shadow(
+        20px 10px 4px rgba(0,0,0,0.3)
+    );
 }
 
 #projet {
@@ -319,7 +349,10 @@ footer {
 
 #projet img:hover {
     transform: scale(1.1);
-    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    /*box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);*/
+    filter: drop-shadow(
+        20px 10px 4px rgba(0,0,0,0.3)
+    );
 }
 
 #projet .btn {
@@ -330,9 +363,16 @@ footer {
 }
 
 #veille-technologique {
-    background: linear-gradient(to right, #1f1f1f, #2e2e2e);
+    background: linear-gradient(to right, #292929, #3e3e3e);
     padding: 40px;
     border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    max-width: 900px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
 }
 
 #veille-technologique section {
@@ -369,4 +409,110 @@ a i {
     font-size: 25px;  /* Taille de l'icône */
     color: #ffffff;   /* Couleur de l'icône */
     margin-right: 8px; /* Espace entre l'icône et le texte (si texte aussi) */
+}
+
+/* Styles spécifiques à la section Présentation */
+#presentation {
+    background: linear-gradient(to bottom, #2c3e50, #34495e); /* Dégradé pour correspondre au style général */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    color: #dcdcdc;
+    max-width: 1000px; /* Uniformité avec les autres sections */
+}
+
+#presentation h2 {
+    font-size: 2rem;
+    color: #58abff; /* Titre bleu clair pour s'aligner avec les autres sections */
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase; /* Uniformité dans le style des titres */
+}
+
+#presentation p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Styles spécifiques à la section Cahier des charges */
+#cahierdescharges {
+    background: linear-gradient(to bottom, #292929, #3e3e3e); /* Fond sombre en dégradé */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    color: #dcdcdc;
+    max-width: 1000px;
+}
+
+#cahierdescharges h2 {
+    font-size: 2rem;
+    color: #58abff;
+    text-align: center;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+#cahierdescharges p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Section des schémas */
+#BDD {
+    background: linear-gradient(to bottom, #292929, #3e3e3e); /* Dégradé sombre */
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 30px auto;
+    max-width: 1000px;
+    color: #dcdcdc;
+    text-align: center;
+}
+
+#BDD h2 {
+    font-size: 2rem;
+    color: #58abff; /* Titre bleu clair */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Conteneur d'images */
+.image-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Les images passent à la ligne si l'écran est petit */
+    gap: 20px;
+}
+
+/* Style pour les images */
+.image-container figure {
+    text-align: center;
+    margin: 0;
+}
+
+.image-container img {
+    max-width: 100%; /* Les images ne dépasseront jamais leur conteneur */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet au survol */
+.image-container img:hover {
+    transform: scale(1.05); /* Agrandissement subtil */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Texte sous les images */
+.image-container figcaption {
+    font-size: 1rem;
+    color: #bfc9ca;
+    margin-top: 10px;
+    text-transform: capitalize;
+    font-style: italic;
 }
