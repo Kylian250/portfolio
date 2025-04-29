@@ -1,4 +1,4 @@
-    /* Style général */
+/* Style général */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -515,4 +515,37 @@ a i {
     margin-top: 10px;
     text-transform: capitalize;
     font-style: italic;
+}
+
+/* Styles spécifiques à la section Use Case */
+.usecase-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.usecase-details ul {
+    list-style-type: none;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.usecase-details ul ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.diagram {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.diagram img {
+    max-width: 100%;
+    height: auto;
+}
+
+.caption {
+    font-style: italic;
+    color: #666;
+    margin-top: 10px;
 }
